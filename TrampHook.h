@@ -1,6 +1,6 @@
 
-#ifndef TRAMPCLASS_H
-#define TRAMPCLASS_H
+#ifndef TRAMPHOOK_H
+#define TRAMPHOOK_H
 #include"pch.h"
 
 unsigned int g_minJmpOpCodeLen { 5 }; // minimum length of jump opcode instructions
@@ -12,7 +12,7 @@ private:
 	uintptr_t m_origFuncAddress {};
 	uintptr_t m_finalHookAddress {};
 	uintptr_t m_stolenByteLength {};
-
+	
 public:
 
 	TrampHook() = default; // default constructor
@@ -37,7 +37,7 @@ public:
 
 		uintptr_t relativeAddress = (uintptr_t) ((uintptr_t) m_finalHookAddress - (uintptr_t) m_origFuncAddress) - g_minJmpOpCodeLen;
 
-		*(BYTE*) m_origFuncAddress = 0XE9; // jumpopcode
+		*(BYTE*) m_origFuncAddress = (char)0XE9; // jumpopcode
 
 		*(uintptr_t*) ((uintptr_t) m_origFuncAddress + 1) = relativeAddress; // putting relative address after junp opcode
 
@@ -60,7 +60,7 @@ public:
 			((uintptr_t) (m_origFuncAddress) +m_stolenByteLength)
 			- ((uintptr_t) (gateWay) +m_stolenByteLength) - g_minJmpOpCodeLen;
 		// jump opcode after copied bytes
-		*(uintptr_t*) ((uintptr_t) (gateWay) +m_stolenByteLength) = 0xE9;
+		*(uintptr_t*) ((uintptr_t) (gateWay) +m_stolenByteLength) = (char)0xE9;
 
 		// writing relative address to jump in gateWay memory alloaction after jump opcode
 		*(uintptr_t*) ((uintptr_t) (gateWay) +m_stolenByteLength + 1) = gateWayRelativeAddr;
@@ -70,6 +70,21 @@ public:
 		return (BYTE*) gateWay;
 	}
 
+  /*static inline	void __declspec(naked) registerLogger()
+	{
+		_asm { // misfunction changed asm code included here
+
+		    pushad
+			mov m_registerValue, ecx
+			popad
+			jmp[m_origFuncAddress+ m_stolenByteLength]
+		}
+
+	}
+	uintptr_t getRegisterValue()
+	{
+		return m_registerValue;
+	}  */
 };
 
 #endif

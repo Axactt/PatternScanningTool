@@ -144,7 +144,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="framework.h" />
-    <ClInclude Include="TrampClass.h" />
+    <ClInclude Include="TrampHook.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="PatternScanner.h" />
   </ItemGroup>

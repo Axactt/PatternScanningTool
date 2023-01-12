@@ -24,7 +24,7 @@
     <ClInclude Include="PatternScanner.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="TrampClass.h">
+    <ClInclude Include="TrampHook.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
