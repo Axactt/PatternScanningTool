@@ -215,7 +215,7 @@ void __fastcall GetWeaponDefDummy(void* pECX, void* pEDX, const char* objectname
 TrampHook magicClass { (uintptr_t) addressLogger4(),(uintptr_t) &GetWeaponDefDummy, 9 };
 
 /*=============================================================================================================================================================*/
-
+//code updated
 
 /*=============================================================================================================================================================*/
 BOOL APIENTRY DllMain(HMODULE hModule,
