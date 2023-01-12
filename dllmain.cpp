@@ -23,10 +23,6 @@ void __declspec(naked) registerLogger()
 	}
 
 }
-
-
-
-
 void WINAPI  MyThreadFunction1()
 {
 	char bytesToPatch1[] = "\x90\x90";
