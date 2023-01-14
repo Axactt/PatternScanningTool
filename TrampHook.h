@@ -3,7 +3,7 @@
 #define TRAMPHOOK_H
 #include"pch.h"
 
-unsigned int g_minJmpOpCodeLen { 5 }; // minimum length of jump opcode instructions
+unsigned int g_minJmpOpCodeLen { 5 }; // minimum length of jump opcode instruction
 
 class TrampHook
 {

@@ -57,7 +57,7 @@ void WINAPI MyThreadFunction2()
 }
 
 /*============================================================================================================================================================*/
-// To log address of class member function idGameLocal::GetLocalPlayer
+// To log addres of class member function idGameLocal::GetLocalPlayer
 DWORD addressLogger3() 
 {
 	char bytePattern3[] = "\x56\x8B\xF1\x8B\x06\x8B\x50\x7C\xFF\xD2\x85\xC0\x78\x50\x8B\x06\x8B\x50\x7C\x8B\xCE\xFF\xD2\x83\xBC\x86\x00\x00\x00\x00\x00";

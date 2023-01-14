@@ -4,7 +4,7 @@
 #include <iostream>
 #include<TlHelp32.h>
 #include<Psapi.h>
-/* // MessageBox wrapper to display address
+/*  MessageBox wrapper to display address
 void MsgBoxAddy(DWORD addy)
 {
 	char szBuffer[1024];
